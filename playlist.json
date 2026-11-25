@@ -1,7 +1,8 @@
 {
     "playlists": [
-        "name":  "ダンアラ",
-        "tracks":  [
+        {
+            "name":  "ダンアラ",
+            "tracks":  [
                    {
                        "title":  "【ダンアラ】罪と罰 ／MASTER／4K",
                        "url":  "https://www.youtube.com/watch?v=8LmI1irhIpY",
@@ -193,5 +194,176 @@
                        "enabled":  true
                    }
             ]
+        },
+        {
+            "name":  "民族・ゴシック",
+            "tracks":  [
+                   {
+                       "title":  "ポラリス",
+                       "url":  "https://www.youtube.com/watch?v=CNzssoQz-xU",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "葉月ゆら - Onyx Veil -忘却の闇-",
+                       "url":  "https://www.youtube.com/watch?v=z3gM6IkVLcI",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【C85】サラマンドラの踊り子 葉月ゆら Yura Hatsuki 歌詞付き",
+                       "url":  "https://www.youtube.com/watch?v=92WFE6Z-ShI",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "Cistlia / Elefselia",
+                       "url":  "https://www.youtube.com/watch?v=c7I8gabsxqw",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "[EZ2AC : EC] Stranger",
+                       "url":  "https://www.youtube.com/watch?v=cJYvZ191vZY",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【Original MV】MYOSOTIS【#中恵光城】",
+                       "url":  "https://www.youtube.com/watch?v=-_GDOtnDwRc",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "イノセントバイブル",
+                       "url":  "https://www.youtube.com/watch?v=pZMTAVLyqh8",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "Evergreen Bloom (English Version)",
+                       "url":  "https://www.youtube.com/watch?v=HaaBeVHboRE",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "水銀の姫",
+                       "url":  "https://www.youtube.com/watch?v=qwpFnDqW84U",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "荒野に咲く天使",
+                       "url":  "https://www.youtube.com/watch?v=ZgD_8yOc2oI",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "穢れなき薔薇十字",
+                       "url":  "https://www.youtube.com/watch?v=mH5HjmIsPp0",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "ひとつになる物語 霜月はるかself-cover ver.",
+                       "url":  "https://www.youtube.com/watch?v=wRb_hcanaes",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "忘却の翼",
+                       "url":  "https://www.youtube.com/watch?v=sSPiAk0DtzU",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "葉月ゆら × Seraph - 血宴 -Vampire\u0027s Banquet-",
+                       "url":  "https://www.youtube.com/watch?v=AZmtDJA0S_0",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "君よ",
+                       "url":  "https://www.youtube.com/watch?v=LyiGmDOznWM",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "銀の糸",
+                       "url":  "https://www.youtube.com/watch?v=WLMBs8nMOfA",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "月の降る街 - Free BGM OpenTracks (formerly DOVA-SYNDROME) Official YouTube Channel",
+                       "url":  "https://www.youtube.com/watch?v=hmNsrBV6-gg",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "Warak -  《自戒》 ～ Paganelope (CHUNITHM NEW チュウニズムニュー)",
+                       "url":  "https://www.youtube.com/watch?v=SW92Dl335u4",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "UTANOHA - Paradox！－新型アリス症候群－",
+                       "url":  "https://www.youtube.com/watch?v=Q-sMDSxbN2s",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "[藍月なくる×まめこ] 月と蝶の小夜曲 (Lyrics \u0026 Romanji \u0026 中文 Subtitles)",
+                       "url":  "https://www.youtube.com/watch?v=82yteshv2Ww",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "Lost Story (feat. chiisa)",
+                       "url":  "https://www.youtube.com/watch?v=KaEWX2ML9KQ",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "Alma Intacta - satella feat.Sennzai",
+                       "url":  "https://www.youtube.com/watch?v=YGCmnDB32Eo",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "Evergreen",
+                       "url":  "https://www.youtube.com/watch?v=zuixxNADd0Y",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "Syndetos",
+                       "url":  "https://www.youtube.com/watch?v=v13PkIR8pYM",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "春告鳥",
+                       "url":  "https://www.youtube.com/watch?v=-uK2yelFBSQ",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "垂氷の花",
+                       "url":  "https://www.youtube.com/watch?v=gj7KO_ez7SI",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "藍月なくる × まめこ - 深淵Amnesia",
+                       "url":  "https://www.youtube.com/watch?v=HbM-mwdO2DQ",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "葉月ゆら - 紅蓮夜叉",
+                       "url":  "https://www.youtube.com/watch?v=6nJ7CMxhk6o",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "Oin RECords - 死神ノ訓ヘ feat. Wasabeep (Vocal. しろさきあや)",
+                       "url":  "https://www.youtube.com/watch?v=1qYx0QK7-2Y",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "空虚のAbyss",
+                       "url":  "https://www.youtube.com/watch?v=y3tq3Os-sE8",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "OrbitArk - 一等星の幻 \"Illusion of the Brightest Star\" Music Video",
+                       "url":  "https://www.youtube.com/watch?v=YFif07QXeAE",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "[Original Song] The Precepts of Paradise / Tsukimi Tsuki [Music Video]",
+                       "url":  "https://www.youtube.com/watch?v=wE10Z6PLEEQ",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "シャルウィー・ムーン",
+                       "url":  "https://www.youtube.com/watch?v=h3KqGZNg9o4",
+                       "enabled":  true
+                   }
+               ]
+        }
     ]
 }
