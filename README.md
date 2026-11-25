@@ -1,7 +1,6 @@
 # Simple Dance プレイリスト
 
 許可したメンバーがGitHubで曲一覧を編集し、GitHub PagesからVRChatへ配信します。
-Googleスプレッドシート・Apps Script・Gist・個人アクセストークンは不要です。
 
 ## 複数の名前付きプレイリストを管理する
 
@@ -18,13 +17,9 @@ PowerShellツールで生成した各JSONオブジェクトを、この配列の
 コピー用パネルが `playlist.json` を取得・検証し、同じ曲名とURLを **YamaPlayerのプレイリスト一覧とURLコピー用パネルの両方** へ渡します。
 
 - 入室約2秒後に、各参加者のクライアントがJSONを1回取得します。途中参加者も同じ方式です。
-- リストごとの追加ダウンロードや、所有者になるまでの待機はありません。通信やVRChat側の待ち時間は別途かかります。
 - パネルの「再読み込み」は追加で1回取得し、両方の一覧を更新します。自動の定期再取得はありません。
 - 取得失敗・不正なJSONの場合は、前の正常な一覧を保持します。「再読み込み」で再試行できます。
 - 再読み込みでは登録済みスロットを再使用し、リストを重複追加しません。
-
-配信処理は旧版との互換性のため `list-01.json` ～ `list-10.json` も生成しますが、**v1.3はこれらを取得しません**。未使用番号は空リストに置き換わります。
-旧v1.0パネル・従来の単一URL追加では先頭リストのみ表示します。
 
 一覧とページ操作は各自のローカル状態で、動画の再生同期はYamaPlayerが担当します。配信途中の更新により、参加者ごとに取得した版が異なる場合があります。特にリストや曲の削除・並べ替え後は、新しいインスタンスで揃えてください。
 再読み込みは現在再生している動画URLを変更しませんが、次曲の選択は更新後の一覧に従います。
@@ -41,11 +36,11 @@ PowerShellツールで生成した各JSONオブジェクトを、この配列の
 
 v1.3は動画のURL解決経路を変更しません。YamaPlayerのリストから直接再生すると、引き続き `api.yamachan.moe` を使用します。`PlayerError` が出る環境では上記のコピー経由を使ってください。コピー用パネルの一覧取得・URL表示はこのサービスを使用しません。
 
-## APIキー不要：Windowsで曲一覧を作って貼り付ける（現在の運用）
+## Windowsで曲一覧を作って貼り付ける（現在の運用）
 
 1. **Code → Download ZIP** で取得してすべて展開します。
 2. `manual/Start.cmd` をダブルクリックし、公開YouTubeプレイリストのURLを貼ります。
-3. 初回は公式yt-dlpを自動取得・SHA256検証します。Cloud Console・APIキー・Pythonは不要です。
+3. 初回は公式yt-dlpを自動取得・SHA256検証します。
 4. `manual/generated/` に作られたJSONを開き、このリポジトリの `playlist.json` を編集してCommitします。
    - 単一リストだけを管理する場合は、生成JSONでファイル全体を置き換えます。
    - 複数リストの場合は、`playlists` 配列内の該当する `{ "name": ..., "tracks": [...] }` だけを置き換えます。ほかのリストは残してください。
@@ -56,54 +51,13 @@ v1.3は動画のURL解決経路を変更しません。YamaPlayerのリストか
 YouTube側を変更したときは再生成・貼り付けを行ってください。GitHubからYouTubeへの定期取得は停止しています。
 詳しくは [manual/README-ja.txt](manual/README-ja.txt) を参照してください。
 
-## 参考：APIキーを使う自動取り込み（任意）
-
-`playlist.json` を次の形式に置き換えます。`プレイリストID` は実際のIDに置き換えてください。
-
-```json
-{
-  "name": "ダンス練習",
-  "youtubePlaylists": [
-    "https://www.youtube.com/playlist?list=プレイリストID"
-  ]
-}
-```
-
-公開プレイリストを使用してください。個人用の「後で見る」、非公開プレイリスト、自動生成ミックスは対象外です。
-複数URLも指定でき、上から順に1つのリストに結合します。各リスト内はYouTubeの順番を維持し、重複動画も残します。
-最大10リスト、各リスト最大200件（非公開・削除済みを含む）、手動分を合わせた合計も最大200曲です。
-非公開・削除済みの項目は除外します。地域制限など、実際の再生可否までは保証しません。
-取得エラー・件数超過・取り込める動画が0件の場合は公開せず、直前の配信を維持します。
-空の `youtubePlaylists: []` またはこの項目の省略は自動取り込みなしを意味します。現在は手元で生成した `tracks` を配信しています。
-
-### 最初に一度だけ：APIキーを登録
-
-1. [Google Cloud Console](https://console.cloud.google.com/) でプロジェクトを作成または選択します。
-2. **APIとサービス → ライブラリ** で **YouTube Data API v3** を有効にします。
-3. **APIとサービス → 認証情報 → 認証情報を作成 → APIキー** でキーを作成します。
-4. キーの **APIの制限** は **YouTube Data API v3** のみにします。GitHub Actionsから呼ぶため、ウェブサイトのHTTPリファラー制限は設定しません。共有ランナーのIPは固定ではありません。
-5. GitHubリポジトリの **Settings → Secrets and variables → Actions → New repository secret** を開きます。
-6. Nameを **YOUTUBE_API_KEY**、Secretを発行したキーにして保存します。
-7. `playlist.json` に実際のプレイリストURLを登録してCommitします。
-8. **Actions → Validate and publish playlist** が成功し、Pagesの `playlist.json` に曲が並ぶことを確認します。
-
-キーを `playlist.json`、Unity、README、チャットには貼らないでください。
-公開データ取得のみのためOAuth同意画面やGoogleアカウントのログイン連携は不要です。
-管理を引き継ぐ場合は、新管理者のGoogle Cloudプロジェクトでキーを作り、このSecretを更新すると管理を分離できます。
-共同編集者はワークフローも変更できるので、Secretsにアクセスし得る信頼したメンバーに限って編集権限を付けてください。
-公式説明: [YouTube API認証](https://developers.google.com/youtube/data/guides/authentication)
 
 ### 更新タイミング
 
 - `main` にCommitしたとき、または **Run workflow** で手動実行したときに更新します。
-- 現在、定期実行は無効です。API方式で定期取得も使う場合のみ、`.github/workflows/pages.yml` の `on` に `schedule` を追加してください（例: `cron: '17 * * * *'`）。GitHubの混雑で遅れる場合があります。
 - 公開リポジトリで60日間活動がないと定期実行が停止することがあります。YouTubeだけの編集はGitHub側の活動にはなりません。停止時はActionsからワークフローを再有効化してください。
 - 配信URLが同じならUnityの変更・再アップロードは不要です。新しいインスタンスでリストを確認してください。
 
-GitHubの仕様: [定期実行](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)
-
-`tracks` と `youtubePlaylists` の併用も可能です。その場合は手動曲の後ろに自動取り込みの曲が並びます。
-YouTubeだけに切り替える場合は、既存の `tracks` を削除してください。
 
 ## 手動で1曲ずつ登録する場合
 
@@ -132,21 +86,6 @@ YouTubeだけに切り替える場合は、既存の `tracks` を削除してく
 
 入力に誤りがある場合は配信せず、直前の正常な配信を維持します。
 過去の内容はGitHubの変更履歴から確認・復元できます。
-
-## 所有者の初期設定
-
-1. 公開リポジトリ `simple-dance-playlist` を作成します。
-2. このフォルダの内容を、隠しフォルダ `.github` を含めてリポジトリのルートへ配置します。
-   Unityプロジェクト全体はアップロードしません。ブランチ名は `main` にします。
-3. **Settings → Pages → Build and deployment → Source** を **GitHub Actions** にします。
-4. **Actions → Validate and publish playlist → Run workflow** で初回配信します。
-5. **Settings → Collaborators** から、編集してよい人のGitHubアカウントを招待します。
-   招待された人が承諾すると編集できます。招待する相手は所有者が選んでください。
-   共同編集者は曲リスト以外のリポジトリ内ファイルも編集可能です。
-6. 現在の運用ではAPIキーは登録せず、PowerShellツールで生成した曲一覧を `playlist.json` に反映します。API方式を選ぶ場合のみ、上記の任意設定を行います。
-
-曲一覧とリポジトリは一般公開、書き込みは所有者と招待された共同編集者のみです。
-外部の人が変更提案を送っても、承認・マージしない限り公開内容は変わりません。
 
 ## Unityへの導入・更新（v1.3）
 
