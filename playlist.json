@@ -1,6 +1,7 @@
 {
-    "name":  "ダンアラ",
-    "tracks":  [
+    "playlists": [
+        "name":  "ダンアラ",
+        "tracks":  [
                    {
                        "title":  "【ダンアラ】罪と罰 ／MASTER／4K",
                        "url":  "https://www.youtube.com/watch?v=8LmI1irhIpY",
@@ -191,5 +192,6 @@
                        "url":  "https://www.youtube.com/watch?v=9nSzhaP3P5I",
                        "enabled":  true
                    }
-               ]
+            ]
+    ]
 }
