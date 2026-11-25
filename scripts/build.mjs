@@ -52,6 +52,15 @@ export function compile(input) {
 }
 
 export function validateSource(source) {
+  if (source && Object.hasOwn(source, 'playlists')) {
+    object(source, ['playlists'], 'リスト集');
+    if (!Array.isArray(source.playlists) || source.playlists.length < 1 || source.playlists.length > 10) throw new Error('playlistsは1～10リストの配列にしてください');
+    for (const list of source.playlists) {
+      object(list, ['name', 'tracks', 'youtubePlaylists'], '各リスト');
+      validateSource(list);
+    }
+    return;
+  }
   object(source, ['name', 'tracks', 'youtubePlaylists'], 'リスト');
   compile({name: source.name, tracks: source.tracks === undefined ? [] : source.tracks});
   if (source.youtubePlaylists !== undefined && (!Array.isArray(source.youtubePlaylists) || source.youtubePlaylists.length > 10)) throw new Error('youtubePlaylistsは最大10件の配列にしてください');
@@ -61,6 +70,12 @@ export function validateSource(source) {
 
 export async function build(source, options = {}) {
   validateSource(source);
+  if (source.playlists) {
+    const playlists = [];
+    for (const list of source.playlists) playlists.push(JSON.parse(await build(list, options)));
+    // Legacy YamaPlayer / v1.0 copy panels see the first list; v1.1 reads playlists.
+    return JSON.stringify({playlist: playlists[0].playlist, playlists});
+  }
   const tracks = [...(source.tracks ?? [])];
   for (const url of source.youtubePlaylists ?? []) {
     tracks.push(...await fetchPlaylist(url, options));
@@ -80,7 +95,8 @@ async function main() {
   await mkdir(directory, {recursive: true});
   await writeFile(new URL('playlist.json', directory), output + '\n');
   await writeFile(new URL('.nojekyll', directory), '');
-  console.log(`Validated ${JSON.parse(output).playlist.contents.length} enabled tracks; generated dist/playlist.json`);
+  const lists = JSON.parse(output).playlists ?? [JSON.parse(output)];
+  console.log(`Validated ${lists.length} lists / ${lists.reduce((n,p)=>n+p.playlist.contents.length,0)} enabled tracks; generated dist/playlist.json`);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

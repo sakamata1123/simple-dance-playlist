@@ -1,0 +1,24 @@
+{
+  "playlists": [
+    {
+      "name": "ダンアラ",
+      "tracks": [
+        {
+          "title": "【ダンアラ】罪と罰 ／MASTER／4K",
+          "url": "https://www.youtube.com/watch?v=8LmI1irhIpY",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "別のプレイリスト",
+      "tracks": [
+        {
+          "title": "サンプル曲（自分の曲に変更してください）",
+          "url": "https://www.youtube.com/watch?v=zjiNMPDNO20",
+          "enabled": true
+        }
+      ]
+    }
+  ]
+}
