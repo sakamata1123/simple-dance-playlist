@@ -83,6 +83,18 @@ export async function build(source, options = {}) {
   return compile({name: source.name, tracks});
 }
 
+export function distributionFiles(output) {
+  const root = JSON.parse(output);
+  const lists = root.playlists ?? [root];
+  const files = {'playlist.json': output + '\n'};
+  for (let i=0;i<10;i++) {
+    // Always overwrite every slot, so shrinking a collection cannot leave stale songs.
+    const list = lists[i] ?? {playlist:{title:'未使用',contents:[]}};
+    files[`list-${String(i+1).padStart(2,'0')}.json`] = JSON.stringify(list) + '\n';
+  }
+  return files;
+}
+
 async function main() {
   const source = JSON.parse(await readFile(new URL('../playlist.json', import.meta.url), 'utf8'));
   validateSource(source);
@@ -93,7 +105,7 @@ async function main() {
   const output = await build(source, {apiKey: process.env.YOUTUBE_API_KEY});
   const directory = new URL('../dist/', import.meta.url);
   await mkdir(directory, {recursive: true});
-  await writeFile(new URL('playlist.json', directory), output + '\n');
+  for (const [name, content] of Object.entries(distributionFiles(output))) await writeFile(new URL(name, directory), content);
   await writeFile(new URL('.nojekyll', directory), '');
   const lists = JSON.parse(output).playlists ?? [JSON.parse(output)];
   console.log(`Validated ${lists.length} lists / ${lists.reduce((n,p)=>n+p.playlist.contents.length,0)} enabled tracks; generated dist/playlist.json`);
