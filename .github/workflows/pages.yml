@@ -5,8 +5,6 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
-  schedule:
-    - cron: '17 * * * *'
 
 permissions:
   contents: read
@@ -27,6 +25,9 @@ jobs:
         with:
           node-version: '22'
       - run: npm test
+      - name: Test PowerShell conversion
+        shell: pwsh
+        run: ./manual/Test-Conversion.ps1
       - run: npm run validate
       - run: npm run build
         if: github.event_name != 'pull_request'

@@ -1,4 +1,195 @@
 {
-  "name": "ダンアラ",
-  "youtubePlaylists": ["https://www.youtube.com/playlist?list=PLnJ3zsVwoIVSaFl_G_xK8AxY8OCn3jckt"],
+    "name":  "ダンアラ",
+    "tracks":  [
+                   {
+                       "title":  "【ダンアラ】罪と罰 ／MASTER／4K",
+                       "url":  "https://www.youtube.com/watch?v=8LmI1irhIpY",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Mermaid girl／MASTER／4K",
+                       "url":  "https://www.youtube.com/watch?v=kWB-9HkSIXQ",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Follow Tomorrow／MASTER／4K(60fps)",
+                       "url":  "https://www.youtube.com/watch?v=arkcnyY-xxU",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Sakura Sunrise／MASTER 4K(60fps)",
+                       "url":  "https://www.youtube.com/watch?v=lqzu9iZsN6c",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Din Don Dan／MASTER／4K",
+                       "url":  "https://www.youtube.com/watch?v=zjiNMPDNO20",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Ha･lle･lu･jah／MASTER／4K(60fps)",
+                       "url":  "https://www.youtube.com/watch?v=WTn2MnGRc70",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】ALGORITHM／ADVANCED／4K",
+                       "url":  "https://www.youtube.com/watch?v=-UpxrZsk3MM",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】惑星☆ロリポップ／ADVANCED／4K（60fps）",
+                       "url":  "https://www.youtube.com/watch?v=zLIfvUAR_NQ",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Starchild／MASTER／4K",
+                       "url":  "https://www.youtube.com/watch?v=ZAP0E3wWaRY",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Go Down／MASTER／4K",
+                       "url":  "https://www.youtube.com/watch?v=7FPqMR-vMII",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】朧／MASTER／4K",
+                       "url":  "https://www.youtube.com/watch?v=_C7VMMl6d4g",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Anthurium／MASTER／4K",
+                       "url":  "https://www.youtube.com/watch?v=Omyw1-n4KMM",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】ヒバナ Reloaded ／MASTER／4K",
+                       "url":  "https://www.youtube.com/watch?v=IK8HkUkSIA8",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】打打打打打打打打打打／MASTER／4K",
+                       "url":  "https://www.youtube.com/watch?v=WMAHqNYNj9Y",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Acid.Tribal \u0026 Dance／MASTER／4K",
+                       "url":  "https://www.youtube.com/watch?v=TX7lytybJL8",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】ENDYMION／MASTER／4K(60fps)",
+                       "url":  "https://www.youtube.com/watch?v=CpewlvwA8O8",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "DanceEvolution ARCADE 「罪と罰　振付講座　その１」",
+                       "url":  "https://www.youtube.com/watch?v=lqnIyfP2COc",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "DanceEvolution ARCADE「罪と罰　振付講座　その2」",
+                       "url":  "https://www.youtube.com/watch?v=Bd74ssUKJtM",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "DanceEvolution ARCADE \"Crime and Punishment Choreography Workshop Part 3\"",
+                       "url":  "https://www.youtube.com/watch?v=5FgGeJL9QdE",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "DanceEvolution ARCADE 「罪と罰　振付講座　その4」",
+                       "url":  "https://www.youtube.com/watch?v=gfNHL3vQcJ4",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】梅雪夜／MASTER／4K（60fps）",
+                       "url":  "https://www.youtube.com/watch?v=3AQLUyr4y0g",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】デュアルメモリ／MASTER／4K（60fps）",
+                       "url":  "https://www.youtube.com/watch?v=kkzd17n2hQg",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "[Dancer] catch U / MASTER / 4K (60fps)",
+                       "url":  "https://www.youtube.com/watch?v=-CfQXEeK4EE",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Gimme a Big Beat／MASTER／4K（60fps）",
+                       "url":  "https://www.youtube.com/watch?v=_IkfXDCxrSc",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Debug Dance／MASTER／4K（60fps）",
+                       "url":  "https://www.youtube.com/watch?v=TOlVx-UYdcs",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "[Danara] Confession Concerto / Advanced / 4K (60Fps)",
+                       "url":  "https://www.youtube.com/watch?v=-XPbcCsBEv8",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】DANCE 4 U／MASTER／4K（60fps）",
+                       "url":  "https://www.youtube.com/watch?v=D0yup9lhqgI",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Shall We Matching／MASTER／4K（60fps）",
+                       "url":  "https://www.youtube.com/watch?v=xsqa_L9BuBY",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】MERRiEST／MASTER／4K（60fps）",
+                       "url":  "https://www.youtube.com/watch?v=VlfrTw-OLrQ",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Get Up! feat  Kanae Asaba／MASTER／4K(60fps)",
+                       "url":  "https://www.youtube.com/watch?v=zUpt2QWgqNM",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Prettiful! ／MASTER／4K(60pfs)",
+                       "url":  "https://www.youtube.com/watch?v=ZbWsrlhR6H8",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Funky Street／ADVANCED／4K",
+                       "url":  "https://www.youtube.com/watch?v=lusrwNL6fKU",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】LMSYM／MASTER／4K",
+                       "url":  "https://www.youtube.com/watch?v=raW48y4uUIc",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】COMEBACK／MASTER／4K",
+                       "url":  "https://www.youtube.com/watch?v=mCOTqt6NB3w",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Small Steps／MASTER／4K",
+                       "url":  "https://www.youtube.com/watch?v=zzF8rD27nas",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Back 2 Underground／ADVANCED／4K",
+                       "url":  "https://www.youtube.com/watch?v=w1IUnbglSmk",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】Stardust／ADVANCED／4K",
+                       "url":  "https://www.youtube.com/watch?v=sfX0EURP02U",
+                       "enabled":  true
+                   },
+                   {
+                       "title":  "【ダンアラ】DANCERUSH STARDOM ANTHEM／ADVANCED／4K",
+                       "url":  "https://www.youtube.com/watch?v=9nSzhaP3P5I",
+                       "enabled":  true
+                   }
+               ]
 }
