@@ -1,20 +1,22 @@
 {
-  "name": "Dance Practice",
-  "tracks": [
-    {
-      "title": "ラジオ体操第一",
-      "url": "https://www.youtube.com/watch?v=_YZZfaMGEOU",
-      "enabled": true
-    }
-  ]
-},
-{
-  "name": "ダンアラ",
-  "tracks": [
-    {
-      "title": "Din Don Dan",
-      "url": "https://youtu.be/zjiNMPDNO20?si=9qPdxR6VQa16WffJ",
-      "enabled": true
-    }
-  ]
+  {
+    "name": "Dance Practice",
+    "tracks": [
+      {
+        "title": "ラジオ体操第一",
+        "url": "https://www.youtube.com/watch?v=_YZZfaMGEOU",
+        "enabled": true
+      }
+    ]
+  },
+  {
+    "name": "ダンアラ",
+    "tracks": [
+      {
+        "title": "Din Don Dan",
+        "url": "https://youtu.be/zjiNMPDNO20?si=9qPdxR6VQa16WffJ",
+        "enabled": true
+      }
+    ]
+  }
 }
