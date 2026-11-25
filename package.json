@@ -1,0 +1,10 @@
+{
+  "name": "simple-dance-playlist",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test scripts/build.test.mjs",
+    "build": "node scripts/build.mjs"
+  },
+  "engines": { "node": ">=22" }
+}

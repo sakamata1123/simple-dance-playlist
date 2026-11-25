@@ -1,0 +1,10 @@
+{
+  "name": "Dance Practice",
+  "tracks": [
+    {
+      "title": "ラジオ体操第一",
+      "url": "https://www.youtube.com/watch?v=_YZZfaMGEOU",
+      "enabled": true
+    }
+  ]
+}
