@@ -1,6 +1,7 @@
 import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
+import {fetchPlaylist, playlistId} from './youtube.mjs';
 
 function object(value, keys, location) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error(`${location}: オブジェクトが必要です`);
@@ -50,9 +51,31 @@ export function compile(input) {
   return JSON.stringify({playlist: {title: name, contents}});
 }
 
+export function validateSource(source) {
+  object(source, ['name', 'tracks', 'youtubePlaylists'], 'リスト');
+  compile({name: source.name, tracks: source.tracks === undefined ? [] : source.tracks});
+  if (source.youtubePlaylists !== undefined && (!Array.isArray(source.youtubePlaylists) || source.youtubePlaylists.length > 10)) throw new Error('youtubePlaylistsは最大10件の配列にしてください');
+  for (const url of source.youtubePlaylists ?? []) playlistId(url);
+  if (source.tracks === undefined && source.youtubePlaylists === undefined) throw new Error('tracksまたはyoutubePlaylistsを指定してください');
+}
+
+export async function build(source, options = {}) {
+  validateSource(source);
+  const tracks = [...(source.tracks ?? [])];
+  for (const url of source.youtubePlaylists ?? []) {
+    tracks.push(...await fetchPlaylist(url, options));
+  }
+  return compile({name: source.name, tracks});
+}
+
 async function main() {
   const source = JSON.parse(await readFile(new URL('../playlist.json', import.meta.url), 'utf8'));
-  const output = compile(source); // Validate the whole list before producing an artifact.
+  validateSource(source);
+  if (process.argv.includes('--validate')) {
+    console.log('Source configuration valid (no API access).');
+    return;
+  }
+  const output = await build(source, {apiKey: process.env.YOUTUBE_API_KEY});
   const directory = new URL('../dist/', import.meta.url);
   await mkdir(directory, {recursive: true});
   await writeFile(new URL('playlist.json', directory), output + '\n');
